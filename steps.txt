@@ -1,0 +1,3 @@
+project folder-> php folder + yaml file
+php folder -> docker file + src folder 
+src folder-> index
