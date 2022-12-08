@@ -1,0 +1,14 @@
+SELECT * FROM performance;
+START TRANSACTION;
+UPDATE `performance` SET run=900 WHERE icc_ranking = 1;
+
+SELECT SLEEP(15);
+ROLLBACK;
+
+=====================================
+
+SET TRANSACTION ISOLATION LEVEL UNCOMMITTED;
+START TRANSACTION;
+
+SELECT * from performance;
+COMMIT;

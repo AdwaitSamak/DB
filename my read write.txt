@@ -1,0 +1,16 @@
+Localhost 1st window
+SELECT * FROM `strings`;
+START TRANSACTION;
+UPDATE `strings` SET tension_value=30 WHERE player_id = 1;
+
+SELECT SLEEP(15);
+ROLLBACK;
+
+
+Localhost 2nd window
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+START TRANSACTION;
+
+SELECT * FROM `strings`;
+COMMIT;
+
